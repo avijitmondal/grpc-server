@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.avijitmondal.together.grpc.server.proto";
+option java_outer_classname = "EmailServiceProto";
+option objc_class_prefix = "HLW";
+
+package emailservice;
+
+service EmailSubmit {
+  rpc submitEmail (SubmitRequest) returns (SubmitResponse) {}
+}
+
+service SubmitEmail {
+  rpc submitAsSpamVirusPhish (SubmitRequest) returns (SubmitResponse) {}
+  rpc submitAsLegitimate (SubmitRequest) returns (SubmitResponse) {}
+  rpc submitAsMarketing (SubmitRequest) returns (SubmitResponse) {}
+}
+
+message SubmitRequest {
+  string sender = 1;
+  string receiver = 2;
+  string subject = 3;
+  string body = 4;
+}
+
+message SubmitResponse {
+  bool success = 1;
+  string message = 2;
+}
