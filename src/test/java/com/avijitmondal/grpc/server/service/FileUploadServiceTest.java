@@ -36,7 +36,7 @@ class FileUploadServiceTest {
         StreamObserver<FileUploadRequest> streamObserver = this.fileServiceStub.upload(new FileUploadObserver());
 
         // input file for testing
-        Path path = Paths.get("src/test/resources/input/java_output.pdf");
+        Path path = Paths.get("src/test/resources/input/java_input.pdf");
 
         // build metadata
         FileUploadRequest metadata = FileUploadRequest.newBuilder()
