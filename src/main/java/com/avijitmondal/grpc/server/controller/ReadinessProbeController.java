@@ -1,4 +1,4 @@
-package com.avijitmondal.together.grpc.server.controller;
+package com.avijitmondal.grpc.server.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

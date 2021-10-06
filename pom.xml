@@ -8,7 +8,7 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.avijitmondal.tutorial</groupId>
+	<groupId>com.avijitmondal.grpc</groupId>
 	<artifactId>grpc-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>grpc-server</name>

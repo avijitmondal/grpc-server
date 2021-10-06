@@ -1,4 +1,4 @@
-package com.avijitmondal.together.grpc.server;
+package com.avijitmondal.grpc.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

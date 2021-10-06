@@ -1,4 +1,4 @@
-package com.avijitmondal.together.grpc.server.service;
+package com.avijitmondal.grpc.server.service;
 
 import io.grpc.Server;
 import io.grpc.ServerBuilder;

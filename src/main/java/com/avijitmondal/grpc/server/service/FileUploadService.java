@@ -1,4 +1,4 @@
-package com.avijitmondal.together.grpc.server.service;
+package com.avijitmondal.grpc.server.service;
 
 import com.avijitmondal.grpc.server.proto.FileServiceGrpc;
 import com.avijitmondal.grpc.server.proto.FileUploadRequest;

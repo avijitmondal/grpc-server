@@ -1,6 +1,6 @@
-package com.avijitmondal.together.grpc.server;
+package com.avijitmondal.grpc.server;
 
-import com.avijitmondal.together.grpc.server.service.GrpcServer;
+import com.avijitmondal.grpc.server.service.GrpcServer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
