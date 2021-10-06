@@ -3,7 +3,6 @@ package com.avijitmondal.together.grpc.server.service;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -16,7 +15,7 @@ public class GrpcServer {
     private static final Logger logger = Logger.getLogger(GrpcServer.class.getName());
 
     @Autowired
-    private GreeterImpl greeter;
+    private GreeterService greeter;
 
     @Autowired
     private EmailSubmitService submitService;
@@ -24,15 +23,19 @@ public class GrpcServer {
     @Autowired
     private SubmitEmailService submitEmailService;
 
-//    @Value("#{new Integer('${grpc.server.port}')}")
-    private Integer grpcServerPort=50051;
+    @Autowired
+    private FileUploadService fileUploadService;
+
+    //    @Value("#{new Integer('${grpc.server.port}')}")
+    private Integer grpcServerPort = 50051;
     private Server server;
 
     public void start() throws IOException {
         server = ServerBuilder.forPort(grpcServerPort)
-                .addService(greeter)
-                .addService(submitService)
-                .addService(submitEmailService)
+                .addService(fileUploadService)
+//                .addService(greeter)
+//                .addService(submitService)
+//                .addService(submitEmailService)
                 .build()
                 .start();
         logger.log(Level.INFO, "Server started, listening on {0}", grpcServerPort);

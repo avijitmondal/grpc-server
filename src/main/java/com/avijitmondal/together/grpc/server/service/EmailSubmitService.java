@@ -1,8 +1,8 @@
 package com.avijitmondal.together.grpc.server.service;
 
-import com.avijitmondal.together.grpc.server.proto.EmailSubmitGrpc;
-import com.avijitmondal.together.grpc.server.proto.SubmitRequest;
-import com.avijitmondal.together.grpc.server.proto.SubmitResponse;
+import com.avijitmondal.grpc.server.proto.EmailSubmitGrpc;
+import com.avijitmondal.grpc.server.proto.SubmitRequest;
+import com.avijitmondal.grpc.server.proto.SubmitResponse;
 import io.grpc.stub.StreamObserver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

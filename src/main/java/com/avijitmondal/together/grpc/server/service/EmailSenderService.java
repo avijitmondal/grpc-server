@@ -1,6 +1,6 @@
 package com.avijitmondal.together.grpc.server.service;
 
-import com.avijitmondal.together.grpc.server.proto.SubmitRequest;
+import com.avijitmondal.grpc.server.proto.SubmitRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;

@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "com.avijitmondal.together.grpc.server.proto";
+option java_package = "com.avijitmondal.grpc.server.proto";
 option java_outer_classname = "EmailServiceProto";
 option objc_class_prefix = "HLW";
 
