@@ -33,9 +33,9 @@ public class GrpcServer {
     public void start() throws IOException {
         server = ServerBuilder.forPort(grpcServerPort)
                 .addService(fileUploadService)
-//                .addService(greeter)
-//                .addService(submitService)
-//                .addService(submitEmailService)
+                .addService(greeter)
+                .addService(submitService)
+                .addService(submitEmailService)
                 .build()
                 .start();
         logger.log(Level.INFO, "Server started, listening on {0}", grpcServerPort);

@@ -43,9 +43,9 @@ static_resources:
                 tls_certificates:
                   - certificate_chain: { filename: "/etc/envoy/certs/server.crt" }
                     private_key: { filename: "/etc/envoy/certs/server.key" }
-#                validation_context:
-#                  trusted_ca:
-#                    filename: certs/cacert.pem
+  #                validation_context:
+  #                  trusted_ca:
+  #                    filename: certs/cacert.pem
   clusters:
     - name: greeter_service
       connect_timeout: 0.25s
