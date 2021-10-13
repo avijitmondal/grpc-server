@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  grpc-server:
+    image: avijit/grpc-server:1.0
+    container_name: grpc-server
+    ports:
+      - "8443:8443"
+      - "50051:50051"
+
+  envoyproxy:
+    image: avijit/envoyproxy:1.0
+    container_name: envoyproxy
+    ports:
+      - "9090:9090"
+    links:
+      - grpc-server
+    depends_on:
+      - grpc-server
