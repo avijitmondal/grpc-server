@@ -82,14 +82,12 @@ public class MailSubmissionController {
 			}
 			
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Received a Mail\n");
-//		sendEmail(email, email_attachments);
+		sendEmail(email, email_attachments);
 		return "Received mail";
 //		HttpHeaders responseHeaders = new HttpHeaders();
 //	    responseHeaders.set("Access-Control-Allow-Origin", "*");
@@ -98,8 +96,8 @@ public class MailSubmissionController {
 	
 	void sendEmail(Mail email, Attachment[] email_attachments) {
 		
-		  final String to = "kahscisco@yahoo.com";
-	      final String from = "kahscisco@yahoo.com";
+		  final String to = "avijitmondal0@yahoo.com";
+	      final String from = "avijitmondal0@yahoo.com";
 
 	      String host = "smtp.mail.yahoo.com";
 	      Properties properties = System.getProperties();
@@ -111,7 +109,7 @@ public class MailSubmissionController {
 
 	      Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
 	          protected PasswordAuthentication getPasswordAuthentication() {
-	              return new PasswordAuthentication("kahscisco", "vgsmywaexamejlzh");
+	              return new PasswordAuthentication("avijitmondal0", "bczgtahxlwgnouyl");
 	          }
 	      });
 
