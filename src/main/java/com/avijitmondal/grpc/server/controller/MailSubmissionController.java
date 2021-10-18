@@ -39,7 +39,8 @@ public class MailSubmissionController {
 
 	@PostMapping("/submit")
 	public String submit(@RequestBody String mail) {
-//		System.out.println(mail);
+		System.out.println("submit");
+		System.out.println(mail);
 		ObjectMapper objectMapper = new ObjectMapper();
 		Mail email = null;
 		Attachment[] email_attachments = null;
@@ -88,7 +89,7 @@ public class MailSubmissionController {
 			e.printStackTrace();
 		}
 		System.out.println("Received a Mail\n");
-		sendEmail(email, email_attachments);
+//		sendEmail(email, email_attachments);
 		return "Received mail";
 //		HttpHeaders responseHeaders = new HttpHeaders();
 //	    responseHeaders.set("Access-Control-Allow-Origin", "*");

@@ -18,6 +18,6 @@ public class GrpcServerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		grpcServer.start();
+//		grpcServer.start();
 	}
 }
