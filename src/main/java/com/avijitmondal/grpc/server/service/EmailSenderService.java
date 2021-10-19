@@ -59,7 +59,7 @@ public class EmailSenderService implements Runnable {
 
             helper.setSubject(email.getSubject());
 
-            helper.setText(request.getBody(), true);
+            helper.setText(email.getBody(), true);
 
 //            helper.addAttachment("my_photo.png", new ClassPathResource("android.png"));
 //            for(int i=0;i<email.getNumAttachments();i++) {
