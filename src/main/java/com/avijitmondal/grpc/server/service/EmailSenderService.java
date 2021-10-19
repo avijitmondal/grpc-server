@@ -54,7 +54,7 @@ public class EmailSenderService implements Runnable {
             MimeMessage msg = javaMailSender.createMimeMessage();
 
             MimeMessageHelper helper = new MimeMessageHelper(msg, true);
-            helper.setTo("avimonda@cisco.com");
+            helper.setTo("avijitmondal0@yahoo.com");
             helper.setFrom("avijitmondal0@yahoo.com");
 
             helper.setSubject(email.getSubject());
