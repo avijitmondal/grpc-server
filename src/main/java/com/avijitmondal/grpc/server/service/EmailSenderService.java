@@ -54,7 +54,7 @@ public class EmailSenderService implements Runnable {
             MimeMessage msg = javaMailSender.createMimeMessage();
 
             MimeMessageHelper helper = new MimeMessageHelper(msg, true);
-            helper.setTo("avijitmondal0@yahoo.com");
+            helper.setTo("avimonda@cisco.com");
             helper.setFrom("avijitmondal0@yahoo.com");
 
             helper.setSubject(email.getSubject());
@@ -62,22 +62,23 @@ public class EmailSenderService implements Runnable {
             helper.setText(email.getBody(), true);
 
 //            helper.addAttachment("my_photo.png", new ClassPathResource("android.png"));
-//            for(int i=0;i<email.getNumAttachments();i++) {
-//                File file = new File(this.emailAttachments[i].getName());
-//
-//                try ( FileOutputStream fos = new FileOutputStream(file)) {
-//                    byte[] decoder = Base64.getDecoder().decode(this.emailAttachments[i].getContent());
-//                    fos.write(decoder);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
-//                MimeBodyPart attachmentPart = new MimeBodyPart();
-//                DataSource source = new FileDataSource(file);
-//                attachmentPart.setDataHandler(new DataHandler(source));
-//                attachmentPart.setFileName(this.emailAttachments[i].getName());
-//
+            for(int i=0;i<email.getNumAttachments();i++) {
+                File file = new File(this.emailAttachments[i].getName());
+
+                try ( FileOutputStream fos = new FileOutputStream(file)) {
+                    byte[] decoder = Base64.getDecoder().decode(this.emailAttachments[i].getContent());
+                    fos.write(decoder);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                MimeBodyPart attachmentPart = new MimeBodyPart();
+                DataSource source = new FileDataSource(file);
+                attachmentPart.setDataHandler(new DataHandler(source));
+                attachmentPart.setFileName(this.emailAttachments[i].getName());
+
 //                multipart.addBodyPart(attachmentPart);
-//            }
+                helper.addAttachment(this.emailAttachments[i].getName(), source);
+            }
 
             logger.info("Sending ");
             javaMailSender.send(msg);
