@@ -2,6 +2,8 @@ package com.avijitmondal.grpc.server.controller;
 
 import com.avijitmondal.grpc.server.model.Attachment;
 import com.avijitmondal.grpc.server.model.Mail;
+import com.avijitmondal.grpc.server.service.EmailSenderService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,9 +35,9 @@ import javax.mail.internet.MimeMultipart;
 @RestController
 @CrossOrigin
 public class MailSubmissionController {
-	
-//	@Autowired
-//	JavaMailSender javaMailSender;
+
+	@Autowired
+	private EmailSenderService emailSenderService;
 
 	@PostMapping("/submit")
 	public String submit(@RequestBody String mail) {
@@ -87,7 +89,9 @@ public class MailSubmissionController {
 			e.printStackTrace();
 		}
 		System.out.println("Received a Mail\n");
-		sendEmail(email, email_attachments);
+//		sendEmail(email, email_attachments);
+		emailSenderService.setMail(email, email_attachments);
+		emailSenderService.run2();
 		return "Received mail";
 //		HttpHeaders responseHeaders = new HttpHeaders();
 //	    responseHeaders.set("Access-Control-Allow-Origin", "*");
